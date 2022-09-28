@@ -1,0 +1,62 @@
+{% extends "logic/base.html" %}
+
+{% block content %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+        {% load static %}
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <form id="truck_form1" action="" method="post" class="form">
+                {% csrf_token %}
+                
+                <h3>Enter truck dimensions</h3>
+
+                {% bootstrap_form truck_form %}
+                <input id="create_truck_btn" type="button" value="Confirm truck dimensions">
+              </form>
+                <br>
+              <form id="box_form1" action="" method="post" class="form">
+                <h3>Enter box dimensions</h3>
+                
+                {% bootstrap_form box_form %}
+                
+                <input id="add_box_button" type="button" value="Add box" name="add_box_btn"> 
+                <input id="place_boxes_button" type="button" value="Place boxes in truck"> 
+                <input id="create_random_boxes_button" type="button" value="Create random boxes"> 
+            </form>
+              <br>
+
+              <form id="boxes_in_truck" action="" method="post" class="form">
+                {% csrf_token %}
+                
+                
+                <label>Boxes in truck:</label><br>
+                
+              <ol id="boxes_list"></ol>
+              </form>
+              
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div id="div_for_truck">
+
+              </div>
+
+            </div>
+          
+        </div>
+    
+</body>
+<script src="/static/draw_truck_and_boxes.js">
+  var csrf_token = {{csrf_token}}
+</script>
+
+{% endblock %}
