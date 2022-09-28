@@ -9,8 +9,8 @@ class View1(View):
 
     truck_form = VehicleForm
     box_form = BoxesForm
-    initial_truck = {'truck_length': 1360, 'truck_width': 248, 'truck_height': 240}
-    initial_box = {'box_length': 100, 'box_width': 100, 'box_height': 100}
+    initial_truck = {'truck_length': 1360, 'truck_width': 248}
+    initial_box = {'box_length': 100, 'box_width': 100}
     template_name = 'logic/home.html'
     truck = Boxes()
 

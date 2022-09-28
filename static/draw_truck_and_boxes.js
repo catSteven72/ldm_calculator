@@ -209,7 +209,7 @@ function draw_truck(){
   truck_element.style.borderColor = 'black'
   truck_element.style.display = 'block'
   truck_element.style.left = '50px'
-  truck_element.style.position = 'relative' //absolute
+  truck_element.style.position = 'relative'
   truck_element.style.BackgroundColor = 'white'
 
   var csrf = $("input[name=csrfmiddlewaretoken]").val()
@@ -239,10 +239,6 @@ function add_box(){
 
     var box_num = Object.keys(boxes.boxes_for_list).length + 1
 
-    
-  
-    //boxes.boxes_object[box_num] = {'length': box_length, 'width': box_width}
-
     var box_list_elem = document.getElementById('boxes_list')
     var box_for_list = document.createElement("li")
     var box_length_label = document.createElement("label")
@@ -253,6 +249,9 @@ function add_box(){
 
     box_for_list.id = 'box_li' + box_num
     boxes.boxes_for_list[box_num] = box_for_list
+
+    box_length_label.id = 'length_label' + box_num
+    box_width_label.id = 'width_label' + box_num
 
     box_length_input.type = "text"
     box_length_input.value = box_length
@@ -280,7 +279,6 @@ function add_box(){
 
       remove_drawn_box(e.target.id)
       remove_box_elements(e.target.id)
-      //boxes.boxes_object = remove_box_elements(e.target.id)
       
     })
   }
