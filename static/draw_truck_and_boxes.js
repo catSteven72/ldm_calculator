@@ -84,7 +84,7 @@ function add_multiple_boxes_request() {
     $.ajax({
       beforeSend: function (xhr) {
         xhr.setRequestHeader('X-CSRFToken', csrf)
-        setTimeout(100)},
+        setTimeout(3000)},
       url : '',
       type : 'POST', 
       data : {
@@ -178,7 +178,7 @@ function remove_box_request(){
   $.ajax({
     beforeSend: function (xhr) {
       xhr.setRequestHeader('X-CSRFToken', csrf)
-      setTimeout(100)},
+      setTimeout(3000)},
     url : '',
     type : 'POST', 
     data : {
@@ -218,7 +218,7 @@ function draw_truck(){
   $.ajax({
     beforeSend: function (xhr) {
       xhr.setRequestHeader('X-CSRFToken', csrf)
-      setTimeout(100)},
+      setTimeout(3000)},
     url : '',
     type : 'POST', 
     data : {

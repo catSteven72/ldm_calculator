@@ -32,7 +32,7 @@ class View1(View):
     
     def post(self, request):
         logger = logging.getLogger('testlogger')
-        logger.info('request', request)
+        #logger.info('request', request)
         coords = {}
 
         if request.POST['action'] == 'add_box':
