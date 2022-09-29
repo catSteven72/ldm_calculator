@@ -82,13 +82,16 @@ function add_multiple_boxes_request() {
   $("#create_random_boxes_button").attr('disabled', 'disabled');
 
     $.ajax({
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('X-CSRFToken', csrf)
-        setTimeout(ttt, 3000)
-        function ttt() {
-        console.log('timeout')
-      }},
+      // beforeSend: function (xhr) {
+      //   xhr.setRequestHeader('X-CSRFToken', csrf)
+      //   setTimeout(ttt, 3000)
+      //   function ttt() {
+      //   console.log('timeout')
+      // }},
       url : '',
+      headers: {
+        'X-CSRFToken': csrf
+      },
       type : 'POST', 
       data : {
         'box_list': boxes.boxes_object,
@@ -179,14 +182,17 @@ function draw_boxes_in_truck(response){
 function remove_box_request(){
   var csrf = $("input[name=csrfmiddlewaretoken]").val()
   $.ajax({
-    beforeSend: function (xhr) {
-      xhr.setRequestHeader('X-CSRFToken', csrf)
-      setTimeout(ttt, 3000)
-      function ttt() {
-        console.log('timeout')
-      }},
+    // beforeSend: function (xhr) {
+    //   xhr.setRequestHeader('X-CSRFToken', csrf)
+    //   setTimeout(ttt, 3000)
+    //   function ttt() {
+    //     console.log('timeout')
+    //   }},
     url : '',
-    type : 'POST', 
+    type : 'POST',
+    headers: {
+      'X-CSRFToken': csrf
+    },
     data : {
       'box_length': box_length,
       'box_width': box_width,
@@ -225,13 +231,16 @@ function draw_truck(){
 
   var csrf = $("input[name=csrfmiddlewaretoken]").val()
   $.ajax({
-    beforeSend: function (xhr) {
-      xhr.setRequestHeader('X-CSRFToken', csrf)
-      setTimeout(ttt, 3000)
-      function ttt() {
-        console.log('timeout')
-      }},
+    // beforeSend: function (xhr) {
+    //   xhr.setRequestHeader('X-CSRFToken', csrf)
+    //   setTimeout(ttt, 3000)
+    //   function ttt() {
+    //     console.log('timeout')
+    //   }},
     url : '',
+    headers: {
+      'X-CSRFToken': csrf
+    },
     type : 'POST', 
     data : {
       'truck_length': truck_length*20,
