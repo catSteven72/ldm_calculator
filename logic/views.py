@@ -75,8 +75,8 @@ class View1(View):
         if coords == None:
             coords = {}
 
-        logger.info('truck length', self.truck.truck_length)
-        logger.info('truck width', self.truck.truck_width)
+        # logger.info('truck length', self.truck.truck_length)
+        # logger.info('truck width', self.truck.truck_width)
         return JsonResponse(coords, safe=True)
 
     def add_box(self, length, width):
