@@ -27,9 +27,9 @@ IS_HEROKU = "DYNO" in os.environ
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', "django-insecure-s2n)r1#ivhfxsz!%rk91#th1g1txb^y6w7z7un%i^c4h&=1o0-")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["https://ldm-calculator.herokuapp.com/"] #".herokuapp.com"
+ALLOWED_HOSTS = ["ldm-calculator.herokuapp.com/"]
 
 
 # Application definition
