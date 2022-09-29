@@ -82,12 +82,6 @@ function add_multiple_boxes_request() {
   $("#create_random_boxes_button").attr('disabled', 'disabled');
 
     $.ajax({
-      // beforeSend: function (xhr) {
-      //   xhr.setRequestHeader('X-CSRFToken', csrf)
-      //   setTimeout(ttt, 3000)
-      //   function ttt() {
-      //   console.log('timeout')
-      // }},
       url : '',
       headers: {
         'X-CSRFToken': csrf
@@ -98,7 +92,7 @@ function add_multiple_boxes_request() {
         'action': 'add_multiple_boxes'
       },
       success: function(response) { 
-        
+
         draw_boxes_in_truck(response)
         $("#place_boxes_button").removeAttr('disabled');
         $("#create_random_boxes_button").removeAttr('disabled');
@@ -183,12 +177,6 @@ function draw_boxes_in_truck(response){
 function remove_box_request(){
   var csrf = $("input[name=csrfmiddlewaretoken]").val()
   $.ajax({
-    // beforeSend: function (xhr) {
-    //   xhr.setRequestHeader('X-CSRFToken', csrf)
-    //   setTimeout(ttt, 3000)
-    //   function ttt() {
-    //     console.log('timeout')
-    //   }},
     url : '',
     type : 'POST',
     headers: {
@@ -212,8 +200,6 @@ function draw_truck(){
   }
   
   var truck_form_elem = document.getElementById('truck_form1')
-  console.log('truck_length', truck_form_elem['truck_length'].value/20)
-  console.log('truck_width', truck_form_elem['truck_width'].value/20)
   var truck_length = truck_form_elem['truck_length'].value/20
   var truck_width = truck_form_elem['truck_width'].value/20
   var div_for_truck_element = document.getElementById('div_for_truck')
@@ -232,12 +218,6 @@ function draw_truck(){
 
   var csrf = $("input[name=csrfmiddlewaretoken]").val()
   $.ajax({
-    // beforeSend: function (xhr) {
-    //   xhr.setRequestHeader('X-CSRFToken', csrf)
-    //   setTimeout(ttt, 3000)
-    //   function ttt() {
-    //     console.log('timeout')
-    //   }},
     url : '',
     headers: {
       'X-CSRFToken': csrf
