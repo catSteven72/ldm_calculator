@@ -50,6 +50,8 @@ class View1(View):
             self.truck.coordinates = {}
             self.truck.num_of_boxes = 0
             self.truck.list_of_boxes = {}
+            logger.info('truck length in create truck', self.truck.truck_length)
+            logger.info('truck width in create truck', self.truck.truck_width)
             return HttpResponse()
 
         elif request.POST['action'] == 'add_multiple_boxes':
@@ -67,12 +69,12 @@ class View1(View):
                 box_length = request.POST[f'box_list[{i}][length]']
                 box_width = request.POST[f'box_list[{i}][width]']
                 coords = self.add_box(int(box_length), int(box_width))
+            logger.info('truck length in add multiple boxes', self.truck.truck_length)
+            logger.info('truck width in add multiple boxes', self.truck.truck_width)
 
         if coords == None:
             coords = {}
 
-        
-        logger.info('coords', coords)
         logger.info('truck length', self.truck.truck_length)
         logger.info('truck width', self.truck.truck_width)
         return JsonResponse(coords, safe=True)
