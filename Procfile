@@ -1,1 +1,1 @@
-web: gunicorn ldm_calc1.wsgi --log-file -
+web: gunicorn ldm_calc.wsgi --log-file -
