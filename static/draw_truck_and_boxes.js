@@ -98,6 +98,7 @@ function add_multiple_boxes_request() {
         'action': 'add_multiple_boxes'
       },
       success: function(response) { 
+        
         draw_boxes_in_truck(response)
         $("#place_boxes_button").removeAttr('disabled');
         $("#create_random_boxes_button").removeAttr('disabled');

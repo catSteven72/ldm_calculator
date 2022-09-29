@@ -32,7 +32,7 @@ class View1(View):
     
     def post(self, request):
         logger = logging.getLogger('testlogger')
-        #logger.info('request', request)
+        logger.critical('request', request)
         coords = {}
 
         if request.POST['action'] == 'add_box':
@@ -50,8 +50,8 @@ class View1(View):
             self.truck.coordinates = {}
             self.truck.num_of_boxes = 0
             self.truck.list_of_boxes = {}
-            logger.info('truck length in create truck', self.truck.truck_length)
-            logger.info('truck width in create truck', self.truck.truck_width)
+            # logger.info('truck length in create truck', self.truck.truck_length)
+            # logger.info('truck width in create truck', self.truck.truck_width)
             return HttpResponse()
 
         elif request.POST['action'] == 'add_multiple_boxes':
