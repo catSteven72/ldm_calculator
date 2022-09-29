@@ -4,6 +4,8 @@ from .forms import VehicleForm, BoxesForm
 from .box_coordinates import Boxes
 from django.views import View
 from django.http import HttpResponse,JsonResponse 
+import logging
+
 
 class View1(View):
 
@@ -66,6 +68,11 @@ class View1(View):
 
         if coords == None:
             coords = {}
+
+        logger = logging.getLogger('testlogger')
+        logger.info('coords', coords)
+        logger.info('truck length', self.truck.truck_length)
+        logger.info('truck width', self.truck.truck_width)
         return JsonResponse(coords, safe=True)
 
     def add_box(self, length, width):
