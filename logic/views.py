@@ -31,6 +31,8 @@ class View1(View):
         return render(request, self.template_name, context)
     
     def post(self, request):
+        logger = logging.getLogger('testlogger')
+        logger.info('request', request)
         coords = {}
 
         if request.POST['action'] == 'add_box':
@@ -69,7 +71,7 @@ class View1(View):
         if coords == None:
             coords = {}
 
-        logger = logging.getLogger('testlogger')
+        
         logger.info('coords', coords)
         logger.info('truck length', self.truck.truck_length)
         logger.info('truck width', self.truck.truck_width)
