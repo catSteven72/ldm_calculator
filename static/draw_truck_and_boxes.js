@@ -96,10 +96,6 @@ function add_multiple_boxes_request() {
         draw_boxes_in_truck(response)
         $("#place_boxes_button").removeAttr('disabled');
         $("#create_random_boxes_button").removeAttr('disabled');
-      },
-      error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
       }
     })
     
@@ -192,10 +188,6 @@ function remove_box_request(){
       'action': 'remove_box'
     },
     success: function(response) {
-    },
-    error: function (xhr, ajaxOptions, thrownError) {
-      alert(xhr.status);
-      alert(thrownError);
     }
   })
 }
@@ -235,10 +227,6 @@ function draw_truck(){
       'truck_length': truck_length*20,
       'truck_width': truck_width*20,
       'action': 'create_truck'
-    },
-    error: function (xhr, ajaxOptions, thrownError) {
-      alert(xhr.status);
-      alert(thrownError);
     }
   })
 }
